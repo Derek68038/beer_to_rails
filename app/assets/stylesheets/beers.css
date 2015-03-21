@@ -1,0 +1,105 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url("http://images7.alphacoders.com/422/422461.jpg");
+}
+
+@media (min-width: 200px) {
+  .top {
+    display: block;
+    border: ridge;
+    border-width: 5px;
+    border-color: black;
+    background-color: goldenrod;
+    padding-bottom: 20px;
+    position: relative;
+    min-width: 364px;
+  }
+}
+
+@media (min-width: 350px) {
+  .top {
+    font-size: 70%;
+  }
+}
+
+@media (min-width: 575px) {
+  .top {
+    font-size: 100%;
+    max-width: 80%;
+    margin-left: 9%;
+  }
+}
+
+.picture {
+  text-align: center;
+  position: relative;
+  top: 18px;
+}
+
+h1 {
+  font-size: 300%;
+  color: black;
+  text-align: center;
+}
+
+img {
+  position: relative; 
+  top: 18px; 
+}
+
+#styles {
+  font-family: monospace;
+  text-decoration: underline;
+  position: relative;
+  top: 25px;
+  text-align: center;
+  font-size: 25px;
+}
+
+#styles:hover {
+  background: goldenrod;
+}
+
+#breweries {
+  font-family: monospace;
+  text-decoration: underline;
+  position: relative;
+  top: 25px;
+  text-align: center;
+  font-size: 25px;
+}
+
+#breweries:hover {
+  background: goldenrod;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+ul {
+  list-style: none;
+  padding: 8px;
+  font-size: 15px;
+}
+
+.middle {
+  font-family: monospace;
+  text-align: center;
+  position: relative;
+  top: 59px;
+  border: solid;
+  border-width: 2px;
+  border-color: black;
+  background-color: goldenrod;
+  margin-left: 20%;
+  margin-right: 20%;
+  padding: 2px;
+  min-width: 350px;
+}
+
+.middle li:hover {
+  background: white;
+}
