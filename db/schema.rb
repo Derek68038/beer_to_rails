@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150321192209) do
+ActiveRecord::Schema.define(:version => 20150321193513) do
 
   create_table "beers", :force => true do |t|
     t.text     "name"
@@ -21,6 +21,17 @@ ActiveRecord::Schema.define(:version => 20150321192209) do
     t.float    "abv"
     t.text     "review"
     t.text     "date"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "styles", :force => true do |t|
+    t.text     "category"
+    t.text     "color"
+    t.text     "bitterness"
+    t.text     "alcohol"
+    t.text     "flavor"
+    t.text     "related"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
