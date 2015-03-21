@@ -3,6 +3,8 @@ BeerToRails::Application.routes.draw do
   # first created -> highest priority.
   
   resources :beers
+  resources :styles
+  resources :breweries
   
   get "home" => 'beers#home', :as => "home"
   
