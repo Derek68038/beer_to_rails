@@ -35,6 +35,7 @@ body {
   text-align: center;
   position: relative;
   top: 18px;
+  margin-bottom: 55px;
 }
 
 h1 {
@@ -89,17 +90,21 @@ ul {
   font-family: monospace;
   text-align: center;
   position: relative;
-  top: 59px;
+  top: 85px;
   border: solid;
   border-width: 2px;
   border-color: black;
   background-color: goldenrod;
-  margin-left: 20%;
-  margin-right: 20%;
-  padding: 2px;
-  min-width: 350px;
+  margin-left: 15%;
+  margin-right: 15%;
 }
 
 .middle li:hover {
   background: white;
+}
+
+.support {
+  text-align: center;
+  position: relative;
+  top: 150px;
 }

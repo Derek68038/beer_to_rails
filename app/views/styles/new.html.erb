@@ -1,0 +1,33 @@
+<div class="top">
+  <h1><em><img src="/hop1.gif" width="50" height="50" alt="Hop"/>  Add a Beer Style  <img src="/hop1.gif" width="50"          height="50" alt="Hop"/></h1>
+</div>
+
+<% @style.errors.full_messages do |msg| %>
+  <p>Error: <%= msg %></p>
+<% end %>
+
+<div class="enter">
+<%= form_for @style do |f| %>
+  <p id="size"><%= f.label "Style Name:" %></p>
+  <p><%= f.text_field ("category") %></p><br>
+
+  <p id="size"><%= f.label "Color:" %></p>
+  <p><%= f.number_field ("color") %></p><br>
+  
+  <p id="size"><%= f.label "Perceived Bitterness:" %></p>
+  <p><%= f.text_field ("bitterness") %></p><br>
+
+  <p id="size"><%= f.label "Alcohol:" %></p>
+  <p><%= f.number_field ("alcohol") %></p><br>
+  
+  <p id="size"><%= f.label "Flavor and Balance:" %></p>
+  <p><%= f.text_area ("flavor") %></p><br>
+
+  <p id="size"><%= f.label "Related Styles:" %></p>
+  <p><%= f.number_field ("related") %></p><br>
+  
+  <p id="submit"><%= f.submit %></p><br>
+<% end %>
+</div>
+  
+<p id="home"> <%= link_to("Return To Homepage", home_path)%> </p>
