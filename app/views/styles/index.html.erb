@@ -1,3 +1,13 @@
 <div class="top">
   <h1><em><img src="/hop1.gif" width="50" height="50" alt="Hop"/>  Beer Styles  <img src="/hop1.gif" width="50" height="50" alt="Hop"/></em></h1>
 </div>
+
+<div class="beers">
+  <% @style.each do |s| %>
+    <p><strong><a href="/styles/<%= s.id %>" title="<%= s.category %>"><%= s.category %></a></strong></p>
+    
+    <br>
+  <% end %>
+</div> 
+
+<p id="home"> <%= link_to("Return To Homepage", home_path)%> </p>
