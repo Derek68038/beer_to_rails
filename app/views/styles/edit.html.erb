@@ -2,10 +2,6 @@
   <h1><em><img src="/hop1.gif" width="50" height="50" alt="Hop"/>  Edit Beer Style  <img src="/hop1.gif" width="50"          height="50" alt="Hop"/></h1>
 </div>
 
-<% @style.errors.full_messages do |msg| %>
-  <p>Error: <%= msg %></p>
-<% end %>
-
 <div class="enter">
 <%= form_for @style do |f| %>
   <p id="size"><%= f.label "Style Name:" %></p>

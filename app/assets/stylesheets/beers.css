@@ -19,7 +19,7 @@ body {
 
 @media (min-width: 350px) {
   .top {
-    font-size: 70%;
+    font-size: 78%;
   }
 }
 
@@ -108,8 +108,14 @@ ul {
   border-width: 2px;
   border-color: black;
   background-color: goldenrod;
-  margin-left: 15%;
-  margin-right: 15%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.middle li {
+  font-size: 22px;
+  margin: 25px;
+  text-decoration: underline;
 }
 
 .middle li:hover {

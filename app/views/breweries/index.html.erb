@@ -4,7 +4,7 @@
 
 <div class="beers">
   <% @brewery.each do |b| %>
-    <p><strong><a href="/breweries/<%= b.id %>" title="<%= b.category %>"><%= b.category %></a></strong></p>
+    <p><strong><a href="/breweries/<%= b.id %>" title="<%= b.place %>"><%= b.place %></a></strong></p>
     
     <br>
   <% end %>

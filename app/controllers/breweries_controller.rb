@@ -17,4 +17,18 @@ class BreweriesController < ApplicationController
     end
   end
   
+  def show
+    @brewery = Brewery.find_by_id(params[:id])       
+    @beer_brewery = @brewery.beers    
+  end
+  
+  def edit
+    @brewery = Brewery.find_by_id(params[:id])
+  end
+  
+  def update
+    Brewery.update(params[:id], params[:brewery])
+    redirect_to "/breweries"
+  end
+  
 end
