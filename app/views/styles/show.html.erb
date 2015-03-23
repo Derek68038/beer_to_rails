@@ -34,7 +34,7 @@
         <em><%= "There have been no beers entered for this style." %></em>
       <% else %>
       <% @beer.find_each do |b| %>
-        <em><h4><%=b.name%></h4>  
+        <em><h4><em><u><a href="/beers/<%= b.id %>"><%= b.name %></a></u></h4>    
           <ul>
             <li><%= "ID - #{b.id}" %></li>
             <li><%= "Style - #{b.style.category}" %></li>

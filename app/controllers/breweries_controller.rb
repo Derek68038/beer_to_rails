@@ -18,8 +18,9 @@ class BreweriesController < ApplicationController
   end
   
   def show
-    @brewery = Brewery.find_by_id(params[:id])       
-    @beer_brewery = @brewery.beers    
+    @brewery = Brewery.find_by_id(params[:id])
+    @beer = @brewery.beer_mapper
+    @beer_brewery = @brewery.beers
   end
   
   def edit
@@ -28,6 +29,11 @@ class BreweriesController < ApplicationController
   
   def update
     Brewery.update(params[:id], params[:brewery])
+    redirect_to "/breweries"
+  end
+  
+  def destroy
+    Brewery.delete_all("id = '#{params[:id]}'")
     redirect_to "/breweries"
   end
   

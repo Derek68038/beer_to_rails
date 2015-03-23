@@ -1,0 +1,39 @@
+<div class="top">
+  <h1><em><img src="/hop1.gif" width="70" height="70" alt="Hop"/>  Edit Beer  <img src="/hop1.gif" width="70" height="70"      alt="Hop"/></h1>
+</div>
+
+<% @beer.errors.full_messages do |msg| %>
+  <p>Error: <%= msg %></p>
+<% end %>
+
+<div class="enter">
+  <%= form_for @beer do |f| %>
+    <p id="size"><%= f.label "Beer Name:" %></p>
+    <p><%= f.text_field ("name") %></p><br>
+
+    <p id="size"><%= f.label "Beer Style:" %></p>
+    <p id="new"><%= f.select("style_id", options_from_collection_for_select(Style.find(:all), "id", "category")) %></p><br>
+      
+    <p id="size"><%= f.label "Color:" %></p>
+    <p><%= f.text_field ("color") %></p><br>
+  
+    <p id="size"><%= f.label "IBUs (bitterness):" %></p>
+    <p><%= f.number_field ("ibu") %></p><br>
+  
+    <p id="size"><%= f.label "Alcohol (%):" %></p>
+    <p><%= f.number_field :abv, :class => 'text_field', :step => 0.01 %></p><br>
+    
+    <p id="size"><%= f.label "Brewery:" %></p>    
+    <p id="new"><%= f.select("brewery_ids", options_from_collection_for_select(Brewery.find(:all), "id", "place"), {},          {:multiple => true, :size => 15}) %></p><br>
+  
+    <p id="size"><%= f.label "Review:" %></p>
+    <p><%= f.text_area ("review") %></p><br>
+  
+    <p id="size"><%= f.label "Date:" %></p>
+    <p><%= f.text_field ("date") %></p><br>
+  
+    <p id="submit"><%= f.submit %></p><br>
+  <% end %>
+</div>
+  
+<p id="home"> <%= link_to("Return To Homepage", home_path)%> </p>

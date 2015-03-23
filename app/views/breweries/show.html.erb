@@ -7,10 +7,23 @@
     <h3>Description</h3>
     <em><%= @brewery.description %></em>
   </div>
-
-<!-- Add info for beer mapping gem here -->
-
   <br>
+  <br>
+  <div>
+    <h3>Location(s)</h3>
+      <% @beer.find_by_name("#{@brewery.place}") %>
+      <% @beer.locations.each do |location| %>
+        <% if location.state == "NE" %>
+          <em><p><strong><%= location.name %></strong></p>
+          <p><%= location.street %></p> 
+          <p><%= location.city %>,
+          <%= location.state %>
+          <%= location.zip %></p>
+          <p><%= location.phone %></em></p>
+          <br>
+        <% end %>
+     <% end %>
+  </div>
 
   <div>
     <h3>Beer Reviews</h3>
@@ -18,7 +31,7 @@
         <em><%= "There have been no beers entered for this location." %></em>
       <% else %>
       <% @beer_brewery.each do |b| %>
-        <em><h4><%=b.name%></h4>
+        <em><h4><em><u><a href="/beers/<%= b.id %>"><%= b.name %></a></u></h4>
           <ul>
             <li><%= "ID - #{b.id}" %></li>
             <li><%= "Style - #{b.style.category}" %></li>
@@ -34,6 +47,8 @@
   </div>   
 </div>
 
-<p id="home"> <%= link_to("Edit Brewery", edit_brewery_path)%> </p>  
+<p id="edit"> <%= link_to("Edit Brewery", edit_brewery_path)%> </p>
+
+<p id="delete"> <%= link_to("Delete Brewery", brewery_path, method: :delete, data: { confirm: "Are you sure?" })%> </p> 
 
 <p id="home"> <%= link_to("Return To Homepage", home_path)%> </p>

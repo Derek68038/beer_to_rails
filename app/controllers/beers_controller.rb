@@ -17,4 +17,23 @@ class BeersController < ApplicationController
     end
   end
   
+  def show
+    @beer = Beer.find_by_id(params[:id])
+    @all_beer = Beer.where("name = '#{@beer.name}'")
+  end
+  
+  def edit
+    @beer = Beer.find_by_id(params[:id])
+  end
+  
+  def update
+    Beer.update(params[:id], params[:beer])
+    redirect_to "/beers"
+  end
+  
+  def destroy
+    Beer.delete_all("id = '#{params[:id]}'")
+    redirect_to "/beers"
+  end
+  
 end
