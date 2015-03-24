@@ -13,8 +13,9 @@
 # None
 
 class User < ActiveRecord::Base
+  attr_accessible :username, :password
   
-  include BCrypt
+  # include BCrypt
   
   validates :user, presence: true
   validates :password, presence: true
