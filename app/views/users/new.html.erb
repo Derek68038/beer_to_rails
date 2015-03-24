@@ -1,0 +1,27 @@
+<div class="top">
+  <h1><em><img src="/hop1.gif" width="70" height="70" alt="Hop"/>  Please Sign-In  <img src="/hop1.gif" width="70"             height="70" alt="Hop"/></em></h1>
+</div>
+
+<h5 id="reminder"><em>Note that if you don't have an account, a new account will be made upon clicking Log In as long as your Username is not already taken.</em></h5>
+  
+<div class="error">  
+  <% if @user %>
+    <% @user.errors.full_messages.each do |msg| %>  
+      <p>Error: <%= msg %></p>
+    <% end %>
+  <% end %>
+</div>
+  
+<div class="sign_in">
+  <%= form_for @user do |f| %>
+    <p id="user"><%= f.label "Username:" %></p>
+    <p><%= f.text_field ("username") %></p>
+
+    <p id="pass"><%= f.label "Password:" %></p>
+    <p><%= f.password_field ("password") %></p><br>
+
+    <p id="submit"><%= f.submit("Log In") %></p><br>
+  <% end %> 
+</div>
+
+

@@ -103,7 +103,6 @@ a {
 
 ul {
   list-style: none;
-  padding: 8px;
   font-size: 15px;
 }
 
@@ -136,7 +135,15 @@ ul {
   top: 150px;
 }
 
-.field_with_errors {
+.field_with_errors input {
+  background: red;
+}
+
+.field_with_errors textarea{
+  background: red;
+}
+
+.field_with_errors select{
   background: red;
 }
 

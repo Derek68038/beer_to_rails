@@ -10,6 +10,8 @@ gem 'pg'
 gem 'beer_mapping'
 
 gem 'hpricot'
+
+gem 'bcrypt'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -30,8 +32,6 @@ group :development do
   gem 'pry'
   gem 'pry-rails'
 end
-
-gem 'bcrypt'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

@@ -6,22 +6,15 @@ BeerToRails::Application.routes.draw do
   resources :styles
   resources :breweries
   
-  get "home" => 'beers#home', :as => "home"
+  root :to => 'users#new', :as => "new"
+    
+  post "users" => 'users#create'
   
-  #
-  #   get "players" => 'players#index', :as => "players"
-  #
-  #   get "players/new" => 'players#new', :as => "new_player"
-  #
-  #   get "players/:id" => 'players#show', :as => "player"
-  #
-  #   get "players/:id/edit" => 'players#edit', :as => "edit_player"
-  #
-  #   post "players" => 'players#create'
-  #
-  #   put "players/:id" => 'players#update'
-  #
-  #   delete "players/:id" => 'players#delete'
+  get "not_allowed" => 'users#not_allowed'
+  
+  get "home" => 'users#home', :as => "home"
+  
+  get "logout" => 'users#logout', :as => "logout"
   
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'

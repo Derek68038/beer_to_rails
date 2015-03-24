@@ -1,0 +1,78 @@
+#reminder {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.error p {
+  color: red;
+  text-align: center;
+}
+
+.sign_in {
+  font-family: monospace;
+  text-align: center;
+  position: relative;
+  top: 20px;
+  border: solid;
+  border-width: 2px;
+  border-color: black;
+  background-color: goldenrod;
+  margin-left: 24%;
+  margin-right: 24%;
+}
+
+#user {
+  font-size: 16px;
+}
+
+#pass {
+  font-size: 16px;
+}
+
+.middle {
+  font-family: monospace;
+  text-align: center;
+  position: relative;
+  top: 85px;
+  border: solid;
+  border-width: 2px;
+  border-color: black;
+  background-color: goldenrod;
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+.middle li {
+  font-size: 22px;
+  text-decoration: underline;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.middle li:hover {
+  background: white;
+}
+
+.middle ul{
+  padding: 0;
+}
+
+.middle p{
+  font-size: 25px;
+}
+
+.welcome a{
+  font-size: 15px;
+  text-decoration: underline;
+  position: relative;
+  bottom: 20px;
+}
+
+.welcome a:hover {
+  background: white;
+}
+
+ul {
+  list-style: none;
+  font-size: 15px;
+}

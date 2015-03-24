@@ -9,26 +9,46 @@ class StylesController < ApplicationController
   end
   
   def create
-    @style = Style.new(params[:style])
-    if @style.save
-      redirect_to "/styles"
+    if session[:user_id]
+      @current_user = User.find(session[:user_id])
+      @style = Style.new(params[:style])
+      if @style.save
+        redirect_to "/styles"
+      else
+        render "new"
+      end
     else
-      render "new"
+      redirect_to "/"
     end
   end
   
   def show
-    @style = Style.find_by_id(params[:id])
-    @beer = Beer.where("style_id = #{params[:id]}")     
+    if session[:user_id]
+      @current_user = User.find(session[:user_id])
+      @style = Style.find_by_id(params[:id])
+      @beer = Beer.where("style_id = #{params[:id]}") 
+    else
+      redirect_to "/"
+    end    
   end
   
   def edit
-    @style = Style.find_by_id(params[:id])
+    if session[:user_id]
+      @current_user = User.find(session[:user_id])
+      @style = Style.find_by_id(params[:id])
+    else
+      redirect_to "/"
+    end
   end
   
   def update
-    Style.update(params[:id], params[:style])
-    redirect_to "/styles"
+    if session[:user_id]
+      @current_user = User.find(session[:user_id])
+      Style.update(params[:id], params[:style])
+      redirect_to "/styles"
+    else
+      redirect_to "/"
+    end
   end
   
 end
