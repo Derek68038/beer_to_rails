@@ -56,9 +56,13 @@ class BreweriesController < ApplicationController
   
   def destroy
     if session[:user_id]
-      @current_user = User.find(session[:user_id])
-      Brewery.delete_all("id = '#{params[:id]}'")
-      redirect_to "/breweries"
+      if session[:user_id] == 1
+        @current_user = User.find(session[:user_id])
+        Brewery.delete_all("id = '#{params[:id]}'")
+        redirect_to "/breweries"
+      else
+        redirect_to "/breweries"
+      end
     else
       redirect_to "/"
     end

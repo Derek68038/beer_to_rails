@@ -10,12 +10,16 @@ class StylesController < ApplicationController
   
   def create
     if session[:user_id]
-      @current_user = User.find(session[:user_id])
-      @style = Style.new(params[:style])
-      if @style.save
-        redirect_to "/styles"
+      if session[:user_id] == 1
+        @current_user = User.find(session[:user_id])
+        @style = Style.new(params[:style])
+        if @style.save
+          redirect_to "/styles"
+        else
+          render "new"
+        end
       else
-        render "new"
+        redirect_to "/home"
       end
     else
       redirect_to "/"
