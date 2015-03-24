@@ -12,14 +12,5 @@ class Beer < ActiveRecord::Base
   belongs_to :style
   has_and_belongs_to_many :breweries, join_table: :beers_breweries
   
-  def breweries_comma_separated
-    brewery_names = []
-    
-    breweries.each do |b|    #equivalent to self.breweries.each
-      brewery_names << b.place
-    end
-    
-    brewery_names.join(", ")
-  end
-  
+  include BeersHelper  
 end

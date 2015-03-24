@@ -1,5 +1,7 @@
 class BreweriesController < ApplicationController
   
+  include BreweriesHelper
+  
   def index
     @brewery = Brewery.order(:place)
   end
@@ -18,8 +20,8 @@ class BreweriesController < ApplicationController
   end
   
   def show
+    beer_mapper
     @brewery = Brewery.find_by_id(params[:id])
-    @beer = @brewery.beer_mapper
     @beer_brewery = @brewery.beers
   end
   

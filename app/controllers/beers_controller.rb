@@ -1,5 +1,5 @@
 class BeersController < ApplicationController
-  
+      
   def index
     @beer = Beer.order(:name)
   end
