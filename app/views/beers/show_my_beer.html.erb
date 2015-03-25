@@ -1,0 +1,28 @@
+<div class="top">
+  <h1><em><img src="/hop1.gif" width="70" height="70" alt="Hop"/>  Show My Beer  <img src="/hop1.gif" width="70"             height="70" alt="Hop"/></em></h1>
+</div>
+
+<div class="style_attributes">
+  <% if @beer.length == 0 %>
+    <em><%= "You have yet to enter any beer. Get started by going back to the homepage!" %></em>
+  <% else %>
+    <% @beer.find_each do |b| %>
+      <h4><em><u><a href="/beers/<%= b.id %>"><%= b.name %></a></u></h4>  
+      <ul>
+        <li><%= "Style - #{b.style.category}" %></li>
+        <li><%= "Color - #{b.color}" %></li> 
+        <li><%= "IBUs - #{b.ibu}" %></li> 
+        <li><%= "ABV - #{b.abv}%" %></li> 
+        <li><%= "Brewery - #{b.breweries_comma_separated}" %></li>
+        <li><%= "Review - #{b.review}" %></li>
+        <li><%= "Date - #{b.date}" %></li></em>
+        <li><%= "User - #{b.user.username}" %></li> 
+      </ul>
+      <p id="edit_delete"><em><a href="/beers/<%= b.id %>/edit">Edit</a></p>                
+      <p id="edit_delete"><em><a href="http://localhost:3000/beers/<%= b.id %>" rel="nofollow" data-method="delete"               data-confirm="Are you sure?">Delete</a></em>
+      <br>
+    <% end %>
+  <% end %>
+</div>
+
+<p id="home"> <%= link_to("Return To Homepage", home_path)%> </p>

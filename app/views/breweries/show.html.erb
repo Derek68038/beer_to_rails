@@ -33,13 +33,13 @@
       <% @beer_brewery.each do |b| %>
         <em><h4><em><u><a href="/beers/<%= b.id %>"><%= b.name %></a></u></h4>
           <ul>
-            <li><%= "ID - #{b.id}" %></li>
             <li><%= "Style - #{b.style.category}" %></li>
             <li><%= "Color - #{b.color}" %></li>
             <li><%= "IBUs - #{b.ibu}" %></li>
             <li><%= "ABV - #{b.abv}%" %></li>
             <li><%= "Review - #{b.review}" %></li>
             <li><%= "Date - #{b.date}" %></li></em>
+            <li><%= "User - #{b.user.username}" %></li>
           </ul>
           <br>
         <% end %>

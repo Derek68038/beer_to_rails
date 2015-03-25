@@ -32,6 +32,8 @@
     <p id="size"><%= f.label "Date:" %></p>
     <p><%= f.text_field ("date") %></p><br>
   
+    <p id="new"><%= f.select("user_id", options_from_collection_for_select(User.where("id = #{@current_user.id}"), "id",        "username")) %></p><br>
+        
     <p id="submit"><%= f.submit %></p><br>
   <% end %>
 </div>

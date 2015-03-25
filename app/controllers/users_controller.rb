@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  
+  include UsersHelper
     
   def new
     @user = User.new
@@ -36,11 +38,6 @@ class UsersController < ApplicationController
     else
       redirect_to "/"
     end 
-  end
-  
-  def logout
-    session.clear
-    redirect_to "/"
   end
   
 end

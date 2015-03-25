@@ -16,6 +16,8 @@ BeerToRails::Application.routes.draw do
   
   get "logout" => 'users#logout', :as => "logout"
   
+  get "my_beer" => 'beers#show_my_beer', :as => "my_beer"
+  
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action

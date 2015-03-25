@@ -10,7 +10,12 @@ class BeersController < ApplicationController
   end
   
   def new
-    @beer = Beer.new
+    if session[:user_id]
+      @current_user = User.find(session[:user_id])
+      @beer = Beer.new
+    else
+      redirect_to "/"
+    end
   end
   
   def create
@@ -18,13 +23,13 @@ class BeersController < ApplicationController
       @current_user = User.find(session[:user_id])
       @beer = Beer.new(params[:beer])
       if @beer.save
-        redirect_to "/beers"
+        redirect_to "/my_beer"
       else
         render "new"
       end
     else
       redirect_to "/"
-    end  
+    end 
   end
   
   def show
@@ -50,7 +55,7 @@ class BeersController < ApplicationController
     if session[:user_id]
       @current_user = User.find(session[:user_id])
       Beer.update(params[:id], params[:beer])
-      redirect_to "/beers"
+      redirect_to "/my_beer"
     else
       redirect_to "/"
     end
@@ -60,7 +65,16 @@ class BeersController < ApplicationController
     if session[:user_id]
       @current_user = User.find(session[:user_id])
       Beer.delete_all("id = '#{params[:id]}'")
-      redirect_to "/beers"
+      redirect_to "/my_beer"
+    else
+      redirect_to "/"
+    end
+  end
+  
+  def show_my_beer
+    if session[:user_id]
+      @current_user = User.find(session[:user_id])
+      @beer = Beer.where("user_id = #{@current_user.id}")
     else
       redirect_to "/"
     end

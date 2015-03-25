@@ -49,46 +49,8 @@ img {
   top: 18px; 
 }
 
-#styles {
-  font-family: monospace;
-  text-decoration: underline;
-  position: relative;
-  top: 25px;
-  text-align: center;
-  font-size: 25px;
-}
-
-#styles:hover {
-  background: goldenrod;
-}
-
-.style_attributes {
-  margin: 50px;
-}
-
-.style_attributes li{
-  font-size: 18px;
-}
-
-.style_attributes a:hover {
-  background: goldenrod;
-}
-
 #attributes {
   margin-bottom: 40px;
-}
-
-#breweries {
-  font-family: monospace;
-  text-decoration: underline;
-  position: relative;
-  top: 25px;
-  text-align: center;
-  font-size: 25px;
-}
-
-#breweries:hover {
-  background: goldenrod;
 }
 
 .enter {
@@ -167,6 +129,11 @@ ul {
   background: goldenrod;
 }
 
+#home a:hover {
+  background: palegoldenrod;
+  display: block;
+}
+
 #edit {
   line-height: 1.5;
   border: solid 1px;
@@ -176,6 +143,11 @@ ul {
   margin-left: 95px;
   margin-right: 95px;
   background: palegoldenrod;
+}
+
+#edit a:hover {
+  background: darkgoldenrod;
+  display: block; 
 }
 
 #delete {
@@ -189,13 +161,18 @@ ul {
   background: darkgoldenrod;
 }
 
+#delete a:hover {
+  background: goldenrod;
+  display: block;
+}
+
 #edit_delete {
   line-height: 1.5;
   border: solid 1px;
   background: palegoldenrod;
   display: inline-block;
-  margin-top: -5px;
-  margin-left: 8px;
+  margin-top: 5px;
+  margin-left: 5px;
 }
 
 #edit_delete a{

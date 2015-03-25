@@ -1,0 +1,24 @@
+#styles {
+  font-family: monospace;
+  text-decoration: underline;
+  position: relative;
+  top: 25px;
+  text-align: center;
+  font-size: 25px;
+}
+
+#styles:hover {
+  background: goldenrod;
+}
+
+.style_attributes {
+  margin: 50px;
+}
+
+.style_attributes li{
+  font-size: 18px;
+}
+
+.style_attributes a:hover {
+  background: goldenrod;
+}

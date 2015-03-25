@@ -7,7 +7,6 @@
     <h3>Beer Reviews</h3>
       <% @all_beer.each do |b| %>
           <ul>
-            <li><%= "ID - #{b.id}" %></li>
             <li><%= "Style - #{b.style.category}" %></li>
             <li><%= "Color - #{b.color}" %></li>
             <li><%= "IBUs - #{b.ibu}" %></li>
@@ -15,9 +14,8 @@
             <li><%= "Brewery - #{b.breweries_comma_separated}" %></li>
             <li><%= "Review - #{b.review}" %></li>
             <li><%= "Date - #{b.date}" %></li></em>
+            <li><%= "User - #{b.user.username}" %></li>
           </ul>
-          <p id="edit_delete"><%= link_to("Edit", edit_beer_path)%></p>
-          <p id="edit_delete"><%=link_to("Delete", beer_path, method: :delete, data: {confirm: "Are you sure?"})%></p>
           <br>
       <% end %>
   </div>   
