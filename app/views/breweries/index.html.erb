@@ -2,6 +2,10 @@
   <h1><em><img src="/hop1.gif" width="70" height="70" alt="Hop"/>  Breweries  <img src="/hop1.gif" width="70" height="70" alt="Hop"/></em></h1>
 </div>
 
+<% if flash[:notice] %>
+  <div class="notice"><%= flash[:notice] %></div>
+<% end %>
+
 <div class="beers">
   <% @brewery.each do |b| %>
     <p><strong><a href="/breweries/<%= b.id %>" title="<%= b.place %>"><%= b.place %></a></strong></p>

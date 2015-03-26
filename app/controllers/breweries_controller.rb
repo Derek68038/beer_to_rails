@@ -61,6 +61,7 @@ class BreweriesController < ApplicationController
         Brewery.delete_all("id = '#{params[:id]}'")
         redirect_to "/breweries"
       else
+        flash[:notice] = "Sorry, you must be an administrator to complete this action."
         redirect_to "/breweries"
       end
     else

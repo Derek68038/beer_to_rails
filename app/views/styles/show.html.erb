@@ -51,6 +51,8 @@
 </div>
 
 
-<p id="edit"> <%= link_to("Edit Style", edit_style_path)%> </p>  
+<p id="edit"> <%= link_to("Edit Style", edit_style_path)%> </p>
+
+<p id="delete"> <%= link_to("Delete Style", style_path, method: :delete, data: { confirm: "Are you sure?" })%> </p>   
 
 <p id="home"> <%= link_to("Return To Homepage", home_path)%> </p>

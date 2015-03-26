@@ -19,7 +19,8 @@ class StylesController < ApplicationController
           render "new"
         end
       else
-        redirect_to "/home"
+        flash[:notice] = "Sorry, you must be an administrator to complete this action."
+        redirect_to "/styles"
       end
     else
       redirect_to "/"
@@ -50,6 +51,21 @@ class StylesController < ApplicationController
       @current_user = User.find(session[:user_id])
       Style.update(params[:id], params[:style])
       redirect_to "/styles"
+    else
+      redirect_to "/"
+    end
+  end
+  
+  def destroy
+    if session[:user_id]
+      if session[:user_id] == 1
+        @current_user = User.find(session[:user_id])
+        Style.delete_all("id = '#{params[:id]}'")
+        redirect_to "/styles"
+      else
+        flash[:notice] = "Sorry, you must be an administrator to complete this action."
+        redirect_to "/styles"
+      end
     else
       redirect_to "/"
     end
