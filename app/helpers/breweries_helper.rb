@@ -1,7 +1,7 @@
 module BreweriesHelper
   
   def beer_mapper
-    @beer = BeerMapping::API.new("cde4273a2c0ee01fedcd666524ca32bb")
+    @beer = BeerMapping::API.new(ENV['BEER_MAPPER_KEY'])
   end
   
 end
