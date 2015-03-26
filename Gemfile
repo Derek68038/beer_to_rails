@@ -7,8 +7,14 @@ gem 'rails', '3.2.21'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'pg'
+group :development do
+  gem 'pry'
+  gem 'pry-rails'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+end
 
+gem 'pg'
 
 gem 'beer_mapping'
 
@@ -31,10 +37,6 @@ gem 'jquery-rails'
 
 gem 'test-unit'
 
-group :development do
-  gem 'pry'
-  gem 'pry-rails'
-end
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

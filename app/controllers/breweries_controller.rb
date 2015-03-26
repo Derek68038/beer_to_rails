@@ -1,5 +1,5 @@
 class BreweriesController < ApplicationController
-  
+
   include BreweriesHelper
   
   def index
