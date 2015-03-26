@@ -3,19 +3,23 @@
 </div>
 
 <div class="style_attributes">
-  <% @beer.each do |b| %>
-      <h4><em><u><a href="/beers/<%= b.id %>"><%= b.name %></a></u></h4>  
-      <ul>
-        <li><%= "Style - #{b.style.category}" %></li>
-        <li><%= "Color - #{b.color}" %></li> 
-        <li><%= "IBUs - #{b.ibu}" %></li> 
-        <li><%= "ABV - #{b.abv}%" %></li> 
-        <li><%= "Brewery - #{b.breweries_comma_separated}" %></li>
-        <li><%= "Review - #{b.review}" %></li>
-        <li><%= "Date - #{b.date}" %></li></em>
-        <li><%= "User - #{b.user.username}" %></li> 
-      </ul>
-      <br>
+  <% if @beer_brewery.length == 0 %>
+    <em><%= "There's currently no beer in the database. Be the first to add one!" %></em>
+  <% else %>
+    <% @beer.each do |b| %>
+        <h4><em><u><a href="/beers/<%= b.id %>"><%= b.name %></a></u></h4>  
+        <ul>
+          <li><%= "Style - #{b.style.category}" %></li>
+          <li><%= "Color - #{b.color}" %></li> 
+          <li><%= "IBUs - #{b.ibu}" %></li> 
+          <li><%= "ABV - #{b.abv}%" %></li> 
+          <li><%= "Brewery - #{b.breweries_comma_separated}" %></li>
+          <li><%= "Review - #{b.review}" %></li>
+          <li><%= "Date - #{b.date}" %></li></em>
+          <li><%= "User - #{b.user.username}" %></li> 
+        </ul>
+        <br>
+    <% end %>
   <% end %>
 </div>
 

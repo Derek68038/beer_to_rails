@@ -18,8 +18,8 @@
         <li><%= "Date - #{b.date}" %></li></em>
         <li><%= "User - #{b.user.username}" %></li> 
       </ul>
-      <p id="edit_delete"><em><a href="/beers/<%= b.id %>/edit">Edit</a></p>                
-      <p id="edit_delete"><em><a href="http://localhost:3000/beers/<%= b.id %>" rel="nofollow" data-method="delete"               data-confirm="Are you sure?">Delete</a></em>
+      <p id="edit_delete"> <%= link_to("Edit", edit_beer_path(b.id))%> </p>
+      <p id="edit_delete"> <%= link_to("Delete", beer_path(b.id), method: "delete", confirm: "Are you sure?")%> </p>
       <br>
     <% end %>
   <% end %>
