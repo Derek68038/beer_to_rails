@@ -109,6 +109,10 @@ ul {
   background: red;
 }
 
+#center {
+  text-align: center;
+}
+
 #submit input {
   background-color: black;
   color: white;

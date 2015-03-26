@@ -4,10 +4,10 @@
 
 <div class="style_attributes">
   <% if @beer.length == 0 %>
-    <em><%= "There's currently no beer in the database. Be the first to add one!" %></em>
+    <em id="center"><%= "There's currently no beer in the database. Be the first to add one!" %></em>
   <% else %>
     <% @beer.each do |b| %>
-        <h4><em><u><a href="/beers/<%= b.id %>"><%= b.name %></a></u></h4>  
+        <h3><em><u><a href="/beers/<%= b.id %>"><%= b.name %></a></u></h3>  
         <ul>
           <li><%= "Style - #{b.style.category}" %></li>
           <li><%= "Color - #{b.color}" %></li> 
@@ -15,8 +15,8 @@
           <li><%= "ABV - #{b.abv}%" %></li> 
           <li><%= "Brewery - #{b.breweries_comma_separated}" %></li>
           <li><%= "Review - #{b.review}" %></li>
-          <li><%= "Date - #{b.date}" %></li></em>
-          <li><%= "User - #{b.user.username}" %></li> 
+          <li><%= "Date - #{b.date}" %></li>
+          <li><%= "User - #{b.user.username}" %></li></em>
         </ul>
         <br>
     <% end %>
