@@ -3,7 +3,7 @@
 </div>
 
 <div class="style_attributes">
-  <% if @beer_brewery.length == 0 %>
+  <% if @beer.length == 0 %>
     <em><%= "There's currently no beer in the database. Be the first to add one!" %></em>
   <% else %>
     <% @beer.each do |b| %>
