@@ -4,7 +4,7 @@
 
 <div class="style_attributes">
   <% if @beer.length == 0 %>
-    <em id="center"><%= "There's currently no beer in the database. Be the first to add one!" %></em>
+    <p id="center"><em><%= "There's currently no beer in the database. Be the first to add one!" %></em></p>
   <% else %>
     <% @beer.each do |b| %>
         <h3><em><u><a href="/beers/<%= b.id %>"><%= b.name %></a></u></h3>  

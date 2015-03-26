@@ -15,8 +15,8 @@
         <li><%= "ABV - #{b.abv}%" %></li> 
         <li><%= "Brewery - #{b.breweries_comma_separated}" %></li>
         <li><%= "Review - #{b.review}" %></li>
-        <li><%= "Date - #{b.date}" %></li></em>
-        <li><%= "User - #{b.user.username}" %></li> 
+        <li><%= "Date - #{b.date}" %></li>
+        <li><%= "User - #{b.user.username}" %></li></em> 
       </ul>
       <p id="edit_delete"> <%= link_to("Edit", edit_beer_path(b.id))%> </p>
       <p id="edit_delete"> <%= link_to("Delete", beer_path(b.id), method: "delete", confirm: "Are you sure?")%> </p>
