@@ -198,9 +198,19 @@ h3 {
   text-decoration: underline;
 }
 
+.current_user {
+  float: right;
+  margin-right: 5px;
+  font-size: 19px;
+  margin-top: -1%;
+}
+
+.current_user a:hover{
+  color: blue;
+}
+
 .digg_pagination {
-  margin-left: 42%;
-  margin-top: 5%;
+  margin-top: 1%;
   background: palegoldenrod;
   display: inline-block;
   cursor: default;

@@ -3,7 +3,12 @@ class BreweriesController < ApplicationController
   include BreweriesHelper
   
   def index
-    @brewery = Brewery.order(:place).page(params[:page]).per_page(12)
+    if session[:user_id]
+      @current_user = User.find(session[:user_id])
+      @brewery = Brewery.order(:place).page(params[:page]).per_page(12)
+    else
+      redirect_to "/"
+    end
   end
   
   def new

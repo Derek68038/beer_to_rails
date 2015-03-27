@@ -2,6 +2,14 @@
   <p><em><h1><%= @beer.name %></h1></em></p>
 </div>
 
+<div class="current_user">
+  <p>Hi, <a href="/my_beer"><%= @current_user.username %></a>  <a href="/logout"><u>(not you?)</u></a></p>
+</div>
+
+<div class="digg_pagination">
+  <%= will_paginate @all_beer, :page_links => false %>
+</div>
+
 <div class="style_attributes">
   <div>
     <h3>Beer Reviews</h3>

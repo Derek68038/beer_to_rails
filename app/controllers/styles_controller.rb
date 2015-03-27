@@ -1,7 +1,12 @@
 class StylesController < ApplicationController
   
   def index
-    @style = Style.order(:category).page(params[:page]).per_page(12)
+    if session[:user_id]
+      @current_user = User.find(session[:user_id])
+      @style = Style.order(:category).page(params[:page]).per_page(12)
+    else
+      redirect_to "/"
+    end
   end
   
   def new

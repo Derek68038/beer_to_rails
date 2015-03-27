@@ -6,6 +6,10 @@
   <div class="notice"><%= flash[:notice] %></div>
 <% end %>
 
+<div class="current_user">
+  <p>Hi, <a href="/my_beer"><%= @current_user.username %></a>  <a href="/logout"><u>(not you?)</u></a></p>
+</div>
+
 <div class="digg_pagination">
   <%= will_paginate @style, :page_links => false %>
 </div>

@@ -2,6 +2,10 @@
   <h1><em><img src="/hop1.gif" width="70" height="70" alt="Hop"/>  Show My Beer  <img src="/hop1.gif" width="70"             height="70" alt="Hop"/></em></h1>
 </div>
 
+<div class="current_user">
+  <p>Hi, <a href="/my_beer"><%= @current_user.username %></a>  <a href="/logout"><u>(not you?)</u></a></p>
+</div>
+
 <div class="style_attributes">
   <% if @beer_order.length == 0 %>
     <p id="center"><em><%= "You have yet to enter any beer. Get started by going back to the homepage!" %></em></p>
