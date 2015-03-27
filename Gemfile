@@ -14,6 +14,8 @@ group :development do
   gem 'binding_of_caller'
 end
 
+gem 'will_paginate', '> 3.0'
+
 gem 'pg'
 
 gem 'beer_mapping'
