@@ -1,7 +1,7 @@
 class StylesController < ApplicationController
   
   def index
-    @style = Style.order(:category)
+    @style = Style.order(:category).page(params[:page]).per_page(12)
   end
   
   def new

@@ -6,6 +6,10 @@
   <div class="notice"><%= flash[:notice] %></div>
 <% end %>
 
+<div class="digg_pagination">
+  <%= will_paginate @brewery, :page_links => false %>
+</div>
+
 <div class="beers">
   <% @brewery.each do |b| %>
     <p><strong><a href="/breweries/<%= b.id %>" title="<%= b.place %>"><%= b.place %></a></strong></p>

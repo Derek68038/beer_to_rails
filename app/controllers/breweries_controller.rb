@@ -3,7 +3,7 @@ class BreweriesController < ApplicationController
   include BreweriesHelper
   
   def index
-    @brewery = Brewery.order(:place)
+    @brewery = Brewery.order(:place).page(params[:page]).per_page(12)
   end
   
   def new

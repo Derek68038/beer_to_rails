@@ -3,7 +3,7 @@ class BeersController < ApplicationController
   def index
     if session[:user_id]
       @current_user = User.find(session[:user_id])
-      @beer = Beer.order(:name)
+      @beer = Beer.order(:name).page(params[:page]).per_page(12)
     else
       redirect_to "/"
     end
@@ -75,6 +75,7 @@ class BeersController < ApplicationController
     if session[:user_id]
       @current_user = User.find(session[:user_id])
       @beer = Beer.where("user_id = #{@current_user.id}")
+      @beer_order = @beer.order(:name).page(params[:page]).per_page(12)
     else
       redirect_to "/"
     end

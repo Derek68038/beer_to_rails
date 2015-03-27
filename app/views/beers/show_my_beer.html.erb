@@ -3,10 +3,13 @@
 </div>
 
 <div class="style_attributes">
-  <% if @beer.length == 0 %>
+  <% if @beer_order.length == 0 %>
     <p id="center"><em><%= "You have yet to enter any beer. Get started by going back to the homepage!" %></em></p>
   <% else %>
-    <% @beer.find_each do |b| %>
+  <div class="digg_pagination">
+    <%= will_paginate @beer_order, :page_links => false %>
+  </div>
+    <% @beer_order.each do |b| %>
       <h4><em><u><a href="/beers/<%= b.id %>"><%= b.name %></a></u></h4>  
       <ul>
         <li><%= "Style - #{b.style.category}" %></li>
