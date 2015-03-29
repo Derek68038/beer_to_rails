@@ -36,7 +36,7 @@ class BeersController < ApplicationController
     if session[:user_id]
       @current_user = User.find(session[:user_id])
       @beer = Beer.find_by_id(params[:id])
-      @all_beer = Beer.where("name = '#{@beer.name}'").page(params[:page]).per_page(2)
+      @all_beer = Beer.where("name = '#{@beer.name}'").page(params[:page]).per_page(4)
     else
       redirect_to "/"
     end
