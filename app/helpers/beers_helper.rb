@@ -3,7 +3,7 @@ module BeersHelper
   def breweries_comma_separated
     brewery_names = []
     
-    breweries.each do |b|    #equivalent to self.breweries.each
+    breweries.each do |b|    
       brewery_names << b.place
     end
     

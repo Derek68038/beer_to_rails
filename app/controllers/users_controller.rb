@@ -8,7 +8,6 @@ class UsersController < ApplicationController
   
   def create
     @user = User.find_by_username(params[:user][:username])
-    
     if @user == nil
       @user = User.new(username: "#{params[:user][:username]}", password: BCrypt::Password.create(params[:user][:password]))      
       if params[:user][:password] == ""
@@ -22,6 +21,7 @@ class UsersController < ApplicationController
     else
       crypt_password = BCrypt::Password.new(@user.password)
       if crypt_password == params[:user][:password]
+        binding.pry
         session[:user_id] = @user.id
         redirect_to "/home"
       else 
