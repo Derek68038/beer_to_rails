@@ -21,7 +21,6 @@ class UsersController < ApplicationController
     else
       crypt_password = BCrypt::Password.new(@user.password)
       if crypt_password == params[:user][:password]
-        binding.pry
         session[:user_id] = @user.id
         redirect_to "/home"
       else 
