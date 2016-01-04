@@ -1,23 +1,25 @@
 BeerToRails::Application.routes.draw do
   # The priority is based upon order of creation:
   # first created -> highest priority.
-  
+
   resources :beers
   resources :styles
   resources :breweries
-  
+
   root :to => 'users#new', :as => "new"
-    
+
   post "users" => 'users#create'
-  
+
+  get "sign_up" => 'users#sign_up'
+
   get "not_allowed" => 'users#not_allowed'
-  
+
   get "home" => 'users#home', :as => "home"
-  
+
   get "logout" => 'users#logout', :as => "logout"
-  
+
   get "my_beer" => 'beers#show_my_beer', :as => "my_beer"
-  
+
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action

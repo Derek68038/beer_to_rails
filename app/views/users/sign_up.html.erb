@@ -1,0 +1,13 @@
+<h1>New User Form</h1>
+
+<div class="sign_up">
+  <%= form_for @user do |f| %>
+    <p id="user"><%= f.label "Username:" %></p>
+    <p><%= f.text_field ("username") %></p>
+
+    <p id="pass"><%= f.label "Password:" %></p>
+    <p><%= f.password_field ("password") %></p><br>
+
+    <p id="submit"><%= f.submit("Sign Up") %></p><br>
+  <% end %>
+</div>

@@ -1,15 +1,19 @@
 class UsersController < ApplicationController
-  
+
   include UsersHelper
-    
+
   def new
     @user = User.new
   end
-  
+
+  def sign_up
+    @user = User.new
+  end
+
   def create
     @user = User.find_by_username(params[:user][:username])
     if @user == nil
-      @user = User.new(username: "#{params[:user][:username]}", password: BCrypt::Password.create(params[:user][:password]))      
+      @user = User.new(username: "#{params[:user][:username]}", password: BCrypt::Password.create(params[:user][:password]))
       if params[:user][:password] == ""
         redirect_to "/not_allowed"
       elsif @user.save
@@ -23,12 +27,12 @@ class UsersController < ApplicationController
       if crypt_password == params[:user][:password]
         session[:user_id] = @user.id
         redirect_to "/home"
-      else 
+      else
         redirect_to "/not_allowed"
       end
     end
   end
-  
+
   def home
     if session[:user_id]
       @current_user = User.find(session[:user_id])
@@ -36,7 +40,7 @@ class UsersController < ApplicationController
       @name = user.username
     else
       redirect_to "/"
-    end 
+    end
   end
-  
+
 end
