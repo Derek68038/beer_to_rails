@@ -8,9 +8,11 @@ BeerToRails::Application.routes.draw do
 
   root :to => 'users#new', :as => "new"
 
-  post "users" => 'users#create'
+  post "new_users" => 'users#create'
 
-  get "sign_up" => 'users#sign_up'
+  post "users" => 'users#sign_in'
+
+  get "sign_up" => 'users#sign_up', :as => "sign_up"
 
   get "not_allowed" => 'users#not_allowed'
 
