@@ -6,19 +6,19 @@
   <img src="/ne2.jpeg" width="350" height="160" alt="Ne2">
 </div>
 
-<p id="styles"><%= link_to("Beer Styles", styles_path)%></p> 
+<p id="styles"><%= link_to("Beer Styles", styles_path)%></p>
 
 <p id="breweries"><%= link_to("Nebraska Breweries", breweries_path)%></p>
 
 <div class="middle">
-  <div class="welcome">  
-    <p><strong><em>Welcome, <%= @name %>!</strong></p>
+  <div class="welcome">
+    <p><strong><em>Welcome, <%= @name.titleize %>!</strong></p>
     <p><%= link_to("(Log out?)", logout_path)%></p>
   </div>
   <ul>
-    <li><%= link_to("Show My Beer", my_beer_path)%></li> 
-    <li><%= link_to("Add Beer", new_beer_path)%></li> 
-    <li><%= link_to("Show All Beer", beers_path)%></li> 
+    <li><%= link_to("Show My Beer", my_beer_path)%></li>
+    <li><%= link_to("Add Beer", new_beer_path)%></li>
+    <li><%= link_to("Show All Beer", beers_path)%></li>
     <li><%= link_to("Add Beer Style", new_style_path)%></li>
     <li><%= link_to("Add Brewery", new_brewery_path)%></li>
   </ul>
@@ -26,4 +26,4 @@
 
 <div class="support">
   <img src="/support.jpeg" width="294" height="171" alt="Support">
-</div>  
+</div>
