@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-image: url("http://images7.alphacoders.com/422/422461.jpg");
+  /* background-image: url("http://images7.alphacoders.com/422/422461.jpg"); */
 }
 
 @media (min-width: 200px) {
@@ -45,8 +45,8 @@ h1 {
 }
 
 img {
-  position: relative; 
-  top: 18px; 
+  position: relative;
+  top: 18px;
 }
 
 #attributes {
@@ -151,7 +151,7 @@ ul {
 
 #edit a:hover {
   background: darkgoldenrod;
-  display: block; 
+  display: block;
 }
 
 #delete {
